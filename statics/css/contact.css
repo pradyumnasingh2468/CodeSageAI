@@ -1,0 +1,137 @@
+/* ================= GLOBAL STYLE ================= */
+
+/* Base page styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+
+    /* Background gradient */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+    /* Default text color */
+    color: white;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+/* Wrapper for contact page */
+.contact-container {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* Page heading */
+.contact-container h1 {
+    color: #00ffc8;
+    margin-bottom: 20px;
+}
+
+
+/* ================= CONTACT CARDS ================= */
+
+/* Card layout (glass effect) */
+.contact-card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+    backdrop-filter: blur(6px);
+
+    /* ADD THIS */
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.4),
+        0 0 10px rgba(0,255,200,0.15);
+}
+
+/* Card heading */
+.contact-card h2 {
+    color: #00ffc8;
+    margin-bottom: 15px;
+}
+
+
+/* ================= FORM INPUTS ================= */
+
+/* Input and textarea styling */
+.contact-card input,
+.contact-card textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    background: #1e2e35;
+    color: white;
+
+    transition: 0.3s;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    border: 1px solid #00ffc8;
+    box-shadow: 0 0 8px rgba(0,255,200,0.4);
+    outline: none;
+}
+
+/* Textarea specific styles */
+.contact-card textarea {
+    height: 120px;
+    resize: none;
+}
+
+
+/* ================= BUTTON ================= */
+
+/* Submit button */
+.contact-card button {
+    background: #00ffc8;
+    border: none;
+    padding: 10px 16px;
+
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.contact-card button:hover {
+    background: #00cfa8;
+}
+
+
+/* ================= LINKS ================= */
+
+/* Links inside cards */
+.contact-card a {
+    color: #00ffc8;
+    text-decoration: none;
+}
+
+
+/* ================= BACK BUTTON ================= */
+
+/* Back to dashboard link */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: #00ffc8;
+    text-decoration: none;
+}
+
+.message {
+    background: rgba(0,255,200,0.1);
+    color: #00ffc8;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

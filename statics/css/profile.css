@@ -1,0 +1,150 @@
+/* ================= GLOBAL STYLE ================= */
+
+/* Base page styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Background gradient */
+    background: linear-gradient(135deg, #141e30, #243b55);
+
+    /* Default text color */
+    color: white;
+}
+
+
+/* ================= LAYOUT ================= */
+
+/* Main container for profile page */
+.profile-container {
+    padding: 40px;
+}
+
+
+/* ================= BACK BUTTON ================= */
+
+/* Back to dashboard button */
+.back-btn {
+    background: #00ffc8;
+    color: black;
+
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    border: none;
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    background: #00cfa8;
+}
+
+/* ================= CARD COMPONENTS ================= */
+
+/* Shared style for profile and stats cards */
+.profile-card,
+.stats-card {
+    background: rgba(255, 255, 255, 0.05);
+
+    /* Glassmorphism effect */
+    backdrop-filter: blur(12px);
+
+    border-radius: 15px;
+    padding: 25px;
+
+    /* Soft glow effect */
+    box-shadow: 
+    0 10px 30px rgba(0,0,0,0.4),
+    inset 0 0 10px rgba(0,255,200,0.05);
+
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* ================= AVATAR SECTION ================= */
+
+/* Wrapper for avatar and buttons */
+.avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Profile image */
+.avatar {
+    width: 140px;
+    height: 140px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    /* Border + glow */
+    border: 3px solid #00ffc8;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.4);
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* ================= BUTTONS ================= */
+
+/* Remove photo button */
+.remove-photo {
+    background-color: #ff4d4d; /* red */
+    color: white;
+
+    padding: 8px 14px;
+    border-radius: 6px;
+
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+/* Choose photo button */
+.choose-photo {
+    background-color: #00ffc8 !important;
+    color: black;
+
+    padding: 8px 14px;
+    border-radius: 6px;
+
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Upload button */
+.upload-btn {
+    background-color: #00ffc8;
+    color: black;
+
+    padding: 8px 14px;
+    border-radius: 6px;
+
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* ================= TEXT STYLES ================= */
+
+/* Email styling */
+.email {
+    color: #ccc;
+}
+
+.profile-card:hover,
+.stats-card:hover {
+    transform: translateY(-3px);
+    transition: 0.3s;
+}

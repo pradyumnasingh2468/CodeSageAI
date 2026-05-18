@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>CodeSageAI | Sign Up</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+
+<body>
+
+<!-- ================= BACKGROUND ANIMATION ================= -->
+<!-- Canvas used for animated matrix/code effect -->
+<canvas id="matrixCanvas"></canvas>
+
+
+<!-- ================= SIGNUP CONTAINER ================= -->
+<div class="signup-container">
+
+    <!-- Page Heading -->
+    <h1>Create Account</h1>
+
+    <!-- Tagline -->
+    <p class="tagline">Join CodeSageAI</p>
+
+
+    <!-- ================= SIGNUP FORM ================= -->
+    <form id="signupForm" method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+
+        <!-- Username -->
+        <input 
+            type="text" 
+            name="username" 
+            placeholder="Username" 
+            required>
+
+        <!-- First & Last Name (grouped) -->
+        <div class="name-fields">
+
+            <input 
+                type="text" 
+                name="firstname" 
+                placeholder="First Name" 
+                required>
+
+            <input 
+                type="text" 
+                name="lastname" 
+                placeholder="Last Name" 
+                required>
+
+        </div>
+
+        <!-- Email -->
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Email Address" 
+            required>
+
+        <!-- Password -->
+        <input 
+            type="password" 
+            name="password" 
+            id="password" 
+            placeholder="Password" 
+            required>
+
+        <!-- Confirm Password -->
+        <input 
+            type="password" 
+            name="confirm_password" 
+            id="confirmPassword" 
+            placeholder="Confirm Password" 
+            required>
+
+        <!-- Submit Button -->
+        <button type="submit">Sign Up</button>
+
+    </form>
+
+
+    <!-- ================= LOGIN REDIRECT ================= -->
+    <p class="login-link">
+        Already have an account? 
+        <a href="{% url 'login' %}">Login</a>
+    </p>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<!-- Handles form validation / animation -->
+<script src="{% static 'js/signup.js' %}"></script>
+
+</body>
+</html>

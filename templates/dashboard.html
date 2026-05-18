@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSageAI Dashboard</title>
+
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ===== SIDEBAR ===== -->
+    <div class="sidebar">
+        <h2>CodeSageAI</h2>
+
+        <div class="user-info">
+            Welcome, {{ request.user.username }}
+        </div>
+
+        <ul class="menu">
+            <li>
+                <a href="{% url 'new_chat' %}">💬 New Chat</a>
+            </li>
+
+            {% for chat in chats %}
+                <li>
+                    <a href="{% url 'dashboard_chat' chat.id %}">{{ chat.title }}</a>
+                    <button class="delete-btn" onclick="deleteChat({{ chat.id }})" title="Delete chat">✕</button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    <!-- ===== MAIN ===== -->
+    <div class="main">
+
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="user-menu">
+                <span class="username" onclick="toggleUserMenu()">
+                    {{ request.user.username }} ▼
+                </span>
+
+                <div id="dropdownMenu" class="dropdown">
+                    <a href="{% url 'profile' %}">👤 Profile</a>
+                    <a href="{% url 'about' %}">ℹ About</a>
+                    <a href="{% url 'settings' %}">⚙ Settings</a>
+                    <a href="{% url 'contact' %}">📞 Contact</a>
+                    <a href="{% url 'help' %}">❓ Help</a>
+                    <a href="{% url 'logout' %}">🚪 Logout</a>
+                </div>
+            </div>
+
+           
+        </div>
+
+
+        <!-- CHAT AREA -->
+        <div id="chatArea" class="chat-area">
+
+            {% if messages %}
+                {% for msg in messages %}
+                    <div class="message {% if msg.sender == 'user' %}user{% else %}ai{% endif %}">
+                        {{ msg.content }}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="welcome-message">
+                    <h2>Welcome to CodeSageAI!</h2>
+                    <p>Start a new chat or select an existing one to see your conversations.</p>
+                </div>
+            {% endif %}
+
+        </div>
+
+
+        <!-- INPUT AREA -->
+        <div class="input-area">
+
+            {% csrf_token %}
+
+            <!-- PLUS BUTTON -->
+            <!-- PLUS BUTTON -->
+<div class="upload-menu-container">
+    <button class="plus-btn" onclick="toggleUploadMenu()">📎</button>
+
+    <div id="uploadMenu" class="upload-menu">
+        <label>
+            📄 Upload File
+            <input type="file" hidden onchange="uploadFile(event)">
+        </label>
+
+        <label>
+            🖼 Upload Image
+            <input type="file" hidden onchange="uploadImage(event)">
+        </label>
+    </div>
+</div>
+
+            <!-- INPUT -->
+            <textarea 
+                id="userInput"
+                placeholder="Ask CodeSageAI something..."
+                rows="2"
+            ></textarea>
+
+            <!-- SEND -->
+            <button type="button" onclick="sendMessage()">Send</button>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- External libs must load BEFORE dashboard.js -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+<script src="{% static 'js/dashboard.js' %}"></script>
+
+<script>
+    // Apply markdown + syntax highlighting to messages already on the page
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".message.ai").forEach(function (el) {
+            el.innerHTML = marked.parse(el.textContent);
+            el.querySelectorAll("pre code").forEach(function (block) {
+                hljs.highlightElement(block);
+            });
+        });
+
+        const chatArea = document.getElementById("chatArea");
+        if (chatArea) chatArea.scrollTop = chatArea.scrollHeight;
+    });
+</script>
+</body>
+</html>

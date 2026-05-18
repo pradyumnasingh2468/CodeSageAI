@@ -1,0 +1,199 @@
+/* ================= GLOBAL STYLE ================= */
+
+/* Base styling for entire page */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Gradient background */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+    /* Default text color */
+    color: white;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+/* Wrapper for About page content */
+.about-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+
+/* ================= HEADER ================= */
+
+/* Top section containing logo + title */
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Logo image styling */
+.logo {
+    width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+/* Main heading */
+.about-header h1 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+/* Tagline below heading */
+.tagline {
+    color: #00ffc8;
+    font-size: 18px;
+}
+
+
+/* Divider under title */
+.divider {
+    width: 120px;
+    border: 2px solid #00ffc8;
+    margin: 15px auto;
+}
+
+
+/* ================= SECTION CARDS ================= */
+
+/* Individual content blocks (cards) */
+.section {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+
+    /* Glassmorphism effect */
+    backdrop-filter: blur(6px);
+
+    /* Smooth hover animation */
+    transition: 0.3s;
+}
+
+/* Hover effect for cards */
+.section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Section headings */
+.section h2 {
+    color: #00ffc8;
+    margin-bottom: 10px;
+}
+
+
+/* ================= FEATURE LIST ================= */
+
+/* Remove default bullet styling */
+.section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* List items inside sections */
+.section ul li {
+    padding: 8px 0;
+
+    /* Subtle divider between items */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ================= DEVELOPER SECTION ================= */
+
+/* Container for developer links */
+.dev-links {
+    margin-top: 15px;
+}
+
+/* Base style for developer buttons */
+.dev-links a {
+    display: inline-block;
+    margin-right: 12px;
+    padding: 10px 16px;
+
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+
+    transition: 0.3s;
+}
+
+
+/* ================= SOCIAL BUTTONS ================= */
+
+/* GitHub button */
+.dev-links a.github {
+    background: #24292e;
+}
+
+.dev-links a.github:hover {
+    background: #000;
+}
+
+/* LinkedIn button */
+.dev-links a.linkedin {
+    background: #0077b5;
+}
+
+.dev-links a.linkedin:hover {
+    background: #005582;
+}
+
+
+/* ================= BACK BUTTON ================= */
+
+/* Back to dashboard link */
+.back-btn {
+    display: inline-block;
+    margin-top: 40px;
+
+    color: #00ffc8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.back-btn:hover {
+    color: white;
+}
+
+
+/* ================= GENERIC SOCIAL BUTTON ================= */
+
+/* Base style for all social buttons */
+.social-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 8px;
+
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* ================= STEAM BUTTON ================= */
+
+/* Steam-specific styling */
+.social-btn.steam {
+    background: #1b2838;
+    color: #66c0f4;
+}
+
+/* Hover effect */
+.social-btn.steam:hover {
+    background: #2a475e;
+    box-shadow: 0 0 10px #66c0f4;
+}

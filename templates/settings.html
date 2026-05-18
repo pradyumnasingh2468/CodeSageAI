@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Settings | CodeSageAI</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/settings.css' %}">
+
+    <script src="{% static 'js/settings.js' %}"></script>
+</head>
+
+<body>
+
+<div class="settings-container">
+
+    <!-- ================= PAGE HEADER ================= -->
+    <h1>⚙ Settings</h1>
+
+    <!-- Back to Dashboard -->
+    <a href="{% url 'dashboard' %}" class="back-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+
+    <!-- ================= DJANGO MESSAGES ================= -->
+    {% if messages %}
+        {% for message in messages %}
+            <p class="message">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+
+
+    <!-- ================= ACCOUNT SETTINGS ================= -->
+    <div class="settings-card">
+
+        <h2>Account Settings</h2>
+
+        <form method="POST" class="settings-form">
+            {% csrf_token %}
+
+            <!-- Username -->
+            <label>Username</label>
+            <input type="text" name="username" value="{{ request.user.username }}">
+
+            <!-- Email -->
+            <label>Email</label>
+            <input type="email" name="email" value="{{ request.user.email }}">
+
+            <!-- First Name -->
+            <label>First Name</label>
+            <input type="text" name="first_name" value="{{ request.user.first_name }}">
+
+            <!-- Last Name -->
+            <label>Last Name</label>
+            <input type="text" name="last_name" value="{{ request.user.last_name }}">
+
+            <!-- Submit Button -->
+            <button type="submit">Save Changes</button>
+        </form>
+
+    </div>
+
+
+    <!-- ================= DANGER ZONE ================= -->
+    <div class="settings-card danger-zone">
+
+        <h3>⚠ Danger Zone</h3>
+
+        <p>
+            This action will permanently delete your account and all data.
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Confirmation Input -->
+            <label>Type <b>DELETE</b> to confirm:</label>
+            <input 
+                type="text" 
+                id="confirmInput" 
+                name="confirm_text" 
+                placeholder="DELETE">
+
+            <!-- Delete Button (disabled by default) -->
+            <button 
+                type="submit" 
+                name="delete_account" 
+                id="deleteBtn" 
+                disabled>
+                Delete Account
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ================= AI PREFERENCES ================= -->
+    <div class="settings-card">
+
+        <h2>AI Preferences</h2>
+
+        <!-- Default Language -->
+        <label>Default Programming Language</label>
+        <select>
+            <option>Python</option>
+            <option>Java</option>
+            <option>C++</option>
+            <option>JavaScript</option>
+        </select>
+
+        <!-- Response Style -->
+        <label>Response Style</label>
+        <select>
+            <option>Beginner Friendly</option>
+            <option>Detailed Explanation</option>
+            <option>Short Answer</option>
+        </select>
+
+    </div>
+
+
+    <!-- ================= CHAT SETTINGS ================= -->
+    <div class="settings-card">
+
+        <h2>Chat Settings</h2>
+
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>Auto Save Chat History</span>
+</label>
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>Show Code Suggestions</span>
+</label>
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>Clear Chat on Logout</span>
+</label>
+
+    </div>
+
+
+    <!-- ================= NOTIFICATIONS ================= -->
+    <div class="settings-card">
+
+        <h2>Notifications</h2>
+
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>Email Notifications</span>
+</label>
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>AI Feature Updates</span>
+</label>
+
+    </div>
+
+
+    <!-- ================= PRIVACY SETTINGS ================= -->
+    <div class="settings-card">
+
+        <h2>Privacy & Data</h2>
+
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>Allow Code Storage for Analysis</span>
+</label>
+        <label class="checkbox-label">
+    <input type="checkbox"> 
+    <span>Share Anonymous Usage Data</span>
+</label>
+
+    </div>
+
+</div>
+
+</body>
+</html>

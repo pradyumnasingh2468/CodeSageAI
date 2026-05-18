@@ -1,0 +1,132 @@
+/* ================= GLOBAL RESET ================= */
+
+/* Reset default spacing and apply consistent box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    /* Global font */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* ================= BODY ================= */
+
+/* Base page setup */
+body {
+    overflow: hidden;
+
+    /* Dark background for matrix effect */
+    background: black;
+}
+
+
+/* ================= MATRIX BACKGROUND ================= */
+
+/* Full-screen animated canvas */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+}
+
+
+/* ================= LOGIN CONTAINER ================= */
+
+/* Centered login card */
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 350px;
+    padding: 40px;
+    text-align: center;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+
+    border-radius: 15px;
+
+    /* Glow effect */
+    box-shadow: 0 0 25px rgba(0, 255, 200, 0.3);
+
+    color: white;
+}
+
+/* Title */
+.login-container h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+    color: #00ffc8;
+}
+
+/* Tagline */
+.tagline {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+/* ================= FORM ELEMENTS ================= */
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    border-radius: 8px;
+    border: none;
+
+    background: #00ffc8;
+    color: black;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+    background: #00bfa6;
+}
+
+
+/* ================= EXTRA LINKS ================= */
+
+/* Forgot password & signup links */
+.extra-links {
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+/* Link styling */
+.extra-links a {
+    color: #00ffc8;
+    text-decoration: none;
+    margin: 0 8px;
+}

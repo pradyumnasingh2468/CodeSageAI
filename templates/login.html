@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>CodeSageAI | Login</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- ================= BACKGROUND ANIMATION ================= -->
+    <!-- Canvas used for animated code/matrix effect -->
+    <canvas id="matrixCanvas"></canvas>
+
+
+    <!-- ================= LOGIN CONTAINER ================= -->
+    <div class="login-container">
+
+        <!-- App Name -->
+        <h1>CodeSageAI</h1>
+
+        <!-- Tagline -->
+        <p class="tagline">
+            Your Intelligent Coding Assistant
+        </p>
+
+        <!-- Login Form -->
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- Username Input -->
+            <input 
+                type="text" 
+                name="username" 
+                placeholder="Username" 
+                required>
+
+            <!-- Password Input -->
+            <input 
+                type="password" 
+                name="password" 
+                placeholder="Password" 
+                required>
+
+            <!-- Submit Button -->
+            <button type="submit">Login</button>
+        </form>
+
+
+        <!-- Additional Links -->
+        <div class="extra-links">
+
+            <!-- Forgot Password (not implemented yet) -->
+            <a href="#">Forgot Password?</a>
+
+            <!-- Redirect to Signup -->
+            <a href="{% url 'signup' %}">Sign Up</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <!-- Handles background animation -->
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

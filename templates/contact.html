@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Contact | CodeSageAI</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+    <script src = "{% static 'js/contact.js' %}"></script>
+    
+</head>
+
+<body>
+
+<div class="contact-container">
+
+    <!-- ================= PAGE HEADER ================= -->
+    <h1>📞 Contact</h1>
+
+    <!-- Back to Dashboard Button -->
+    <a href="{% url 'dashboard' %}" class="back-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+
+    <!-- ================= DEVELOPER CONTACT INFO ================= -->
+    <div class="contact-card">
+
+        <h2>Developer Contact</h2>
+
+        <!-- Basic Details -->
+        <p><strong>Name:</strong> Pradyumna Singh Bhadoria</p>
+        <p><strong>Phone:</strong> +91 8542817898</p>
+        <p><strong>Email:</strong> pradhyumnasingh2468@gmail.com</p>
+
+        <!-- GitHub Profile -->
+        <p>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/pradyumnasingh2468" target="_blank">
+                github.com/pradyumnasingh2468
+            </a>
+        </p>
+
+        <!-- LinkedIn Profile -->
+        <p>
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/pradyumna-singh-bhadoria-158452280/" target="_blank">
+                LinkedIn Profile
+            </a>
+        </p>
+
+    </div>
+
+
+    <!-- ================= CONTACT FORM ================= -->
+    <div class="contact-card">
+
+        <h2>Send a Message</h2>
+
+        {% if messages %}
+            {% for message in messages %}
+                <p class="message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <!-- User Name -->
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <!-- User Email -->
+            <input type="email" name="email" placeholder="Your Email" required>
+
+            <!-- Message Input -->
+            <textarea name="message" placeholder="Your Message..." required></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit">Send Message</button>
+        </form>
+
+    </div>
+
+
+    <!-- ================= SUPPORT INFORMATION ================= -->
+    <div class="contact-card">
+
+        <h2>Support</h2>
+
+        <p>
+            If you have questions, feedback, or suggestions about CodeSageAI, feel free to reach out 
+            through the contact information above or send a message using the form.
+        </p>
+
+        <p>
+            We aim to continuously improve the AI assistant to help developers write better code 
+            and learn programming more efficiently.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

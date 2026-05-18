@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>About CodeSageAI</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<body>
+
+<div class="about-container">
+
+    <!-- ================= HEADER SECTION ================= -->
+    <div class="about-header">
+
+        <!-- Logo -->
+        <img src="{% static 'images/logo.png' %}" class="logo">
+
+        <!-- Main Heading -->
+        <h1>About CodeSageAI</h1>
+
+        <!-- Tagline -->
+        <p class="tagline">
+            Your Intelligent Coding Companion
+        </p>
+
+    </div>
+
+
+    <!-- ================= INTRODUCTION SECTION ================= -->
+    <section class="section">
+
+        <h2>Introduction</h2>
+
+        <p>
+            CodeSageAI is an AI-powered coding assistant designed to help programmers 
+            write, understand, and improve their code efficiently. The platform analyzes 
+            user code, explains programming logic, detects potential errors, and provides 
+            optimization suggestions using intelligent AI models.
+
+            CodeSageAI aims to make programming easier for beginners while improving 
+            productivity for experienced developers through an interactive AI-driven 
+            coding environment.
+        </p>
+
+    </section>
+
+
+    <!-- ================= MISSION SECTION ================= -->
+    <section class="section">
+
+        <h2>Our Mission</h2>
+
+        <p>
+            Our mission is to simplify programming education and development by providing 
+            an intelligent assistant that guides users through coding challenges, explains 
+            complex algorithms, and suggests efficient solutions in real time.
+        </p>
+
+    </section>
+
+
+    <!-- ================= FEATURES SECTION ================= -->
+    <section class="section">
+
+        <h2>Key Features</h2>
+
+        <ul>
+            <li>AI Code Analysis</li>
+            <li>Real-time Code Explanation</li>
+            <li>Error Detection and Debugging</li>
+            <li>Optimization Suggestions</li>
+            <li>Multi-language Support (Python, Java, C++, JavaScript)</li>
+            <li>Interactive Chat-based Coding Assistance</li>
+        </ul>
+
+    </section>
+
+
+    <!-- ================= TECHNOLOGIES SECTION ================= -->
+    <section class="section">
+
+        <h2>Technologies Used</h2>
+
+        <ul>
+            <li>Frontend : HTML, CSS, JavaScript</li>
+            <li>Backend : Django (Python Framework)</li>
+            <li>Database : PostgreSQL (with Django ORM)</li>
+            <li>AI Integration : Machine Learning / Large Language Models</li>
+            <li>Version Control : Git & GitHub</li>
+        </ul>
+
+    </section>
+
+
+    <!-- ================= VISION SECTION ================= -->
+    <section class="section">
+
+        <h2>Our Vision</h2>
+
+        <p>
+            Our vision is to create an intelligent coding companion that helps developers 
+            learn faster, debug efficiently, and build better software with the assistance 
+            of AI-powered insights.
+        </p>
+
+    </section>
+
+
+    <!-- ================= DEVELOPER SECTION ================= -->
+    <section class="developer">
+
+        <h2>Developer</h2>
+
+        <!-- Developer Name -->
+        <p><strong>Pradyumna Singh Bhadoria</strong></p>
+
+        <!-- Education -->
+        <p>BCA – Data Science & Artificial Intelligence</p>
+
+        <div class="dev-links">
+
+            <!-- Social Links -->
+            <div class="social-links">
+
+                <!-- GitHub -->
+                <a href="https://github.com/pradyumnasingh2468" target="_blank" class="social-btn github">
+                    🐙 GitHub
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/pradyumna-singh-bhadoria-158452280/" target="_blank" class="social-btn linkedin">
+                    💼 LinkedIn
+                </a>
+
+                <!-- Steam -->
+                <a href="https://steamcommunity.com/profiles/76561199236920945/" target="_blank" class="social-btn steam">
+                    🎮 Steam
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BACK BUTTON ================= -->
+    <a href="{% url 'dashboard' %}" class="back-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* ================= BACKGROUND CANVAS ================= */
+
+/* Full-screen animated matrix background */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+}
+
+
+/* ================= GLOBAL BODY STYLE ================= */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Background gradient */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+    /* Center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    overflow: hidden;
+
+    color: white;
+}
+
+
+/* ================= SIGNUP CONTAINER ================= */
+
+/* Glass-style card */
+.signup-container {
+    background: rgba(255, 255, 255, 0.05);
+
+    /* Blur effect */
+    backdrop-filter: blur(10px);
+
+    padding: 40px;
+    border-radius: 15px;
+
+    width: 350px;
+
+    /* Glow effect */
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.3);
+}
+
+/* Heading */
+.signup-container h1 {
+    text-align: center;
+    color: #00ffc8;
+}
+
+/* Tagline */
+.tagline {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* ================= FORM ELEMENTS ================= */
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+
+    border: none;
+    border-radius: 8px;
+}
+
+/* First + Last name layout */
+.name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* ================= BUTTON ================= */
+
+/* Signup button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #00ffc8;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover effect */
+button:hover {
+    background: #00c9a7;
+}
+
+
+/* ================= LINKS ================= */
+
+/* Login redirect text */
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Anchor styling */
+a {
+    color: #00ffc8;
+    text-decoration: none;
+}

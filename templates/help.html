@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Help | CodeSageAI</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/help.css' %}">
+
+    <script src="{% static 'js/help.js' %}"></script>
+</head>
+
+<body>
+
+<div class="help-container">
+
+    <!-- ================= PAGE HEADER ================= -->
+    <h1>❓ Help & Support</h1>
+
+    <!-- Back to Dashboard -->
+    <a href="{% url 'dashboard' %}" class="back-btn">
+        ⬅ Back to Dashboard
+    </a>
+
+
+    <!-- ================= HOW TO USE SECTION ================= -->
+    <div class="help-card">
+
+        <h2>How to Use CodeSageAI</h2>
+
+        <ul>
+            <li>Select a programming language from the dropdown</li>
+            <li>Type your coding question in the input box</li>
+            <li>Click "Send" to get AI-generated responses</li>
+            <li>Use "Reset Chat" to start a new conversation</li>
+        </ul>
+
+    </div>
+
+
+    <!-- ================= FAQ SECTION ================= -->
+    <div class="help-card">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <p class="faq-question">Q1: What does CodeSageAI do?</p>
+        <p class="faq-answer">It helps you understand code, debug errors, and improve your programming skills.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-question">Q2: Which languages are supported?</p>
+        <p class="faq-answer">Python, Java, C++, and JavaScript.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-question">Q3: Is my code saved?</p>
+        <p class="faq-answer">Only if auto-save is enabled in settings.</p>
+    </div>
+
+    <div class="faq-item">
+        <p class="faq-question">Q4: Can beginners use this?</p>
+        <p class="faq-answer">Yes! You can select "Beginner Friendly" mode in settings.</p>
+    </div>
+
+</div>
+
+
+    <!-- ================= TIPS SECTION ================= -->
+    <div class="help-card">
+
+        <h2>Tips for Better Results</h2>
+
+        <ul>
+            <li>Be specific in your questions</li>
+            <li>Mention the programming language</li>
+            <li>Provide error messages for debugging help</li>
+            <li>Break complex problems into smaller parts</li>
+        </ul>
+
+    </div>
+
+
+    <!-- ================= TROUBLESHOOTING SECTION ================= -->
+    <div class="help-card">
+
+        <h2>Troubleshooting</h2>
+
+        <ul>
+            <li>If AI is not responding → Refresh the page</li>
+            <li>If login fails → Check username/password</li>
+            <li>If page not loading → Restart server</li>
+        </ul>
+
+    </div>
+
+
+    <!-- ================= CONTACT SUPPORT SECTION ================= -->
+    <div class="help-card">
+
+        <h2>Need More Help?</h2>
+
+        <p>
+            If you still need assistance, visit the contact page.
+        </p>
+
+        <!-- Redirect to Contact Page -->
+        <a href="{% url 'contact' %}" class="contact-btn">
+            📞 Contact Support
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

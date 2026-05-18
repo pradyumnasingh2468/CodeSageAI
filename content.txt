@@ -1,0 +1,77 @@
+CodeSageAI - Feature Structure
+
+1.  Authentication Module
+    -   Login Page -> Username -> Password
+
+    -   Registration Page -> Username -> First Name -> Last Name ->
+        Email Address -> Password -> Confirm Password
+
+    -   Logout -> Ends user session -> Redirects to login page
+
+
+2.  Dashboard Module (Core Feature)
+    -   Title (CodeSageAI)
+
+    -   Greeting (Welcome, User)
+
+    -   Username Dropdown Menu
+
+    -   Chat Features -> New Chat -> History -> Reset Chat -> Input Bar
+
+    -   AI Interaction -> Select Programming Language -> Send query to
+        AI -> Display response
+
+
+3.  Profile Module
+    -   Username
+
+    -   First & Last Name
+
+    -   Email Address
+
+    -   AI Usage Stats -> Total Queries -> Favorite Language -> Member
+        Since
+
+
+4.  About Module
+    -   Introduction
+    -   Our Mission
+    -   Key Features
+    -   Technologies Used
+    -   Our Vision
+    -   Developer Information
+
+
+5.  Settings Module
+    -   Account Settings -> Change Username -> Change Email -> Change
+        Password
+
+    -   AI Preferences -> Default Programming Language -> Response Style
+
+    -   Chat Settings -> Auto Save Chat History -> Show Code Suggestions
+        -> Clear Chat on Logout
+
+    -   Notifications -> Email Notifications -> AI Feature Updates
+
+    -   Privacy & Data -> Allow Code Storage for Analysis -> Share
+        Anonymous Usage Data
+
+
+6.  Contact Module
+    -   Developer Contact Info -> Name -> Phone -> Email -> GitHub ->
+        LinkedIn
+
+    -   Communication -> Send a Message -> Support Information
+
+
+7.  Help Module
+    -   How to Use CodeSageAI
+    -   Frequently Asked Questions
+    -   Tips for Better Results
+    -   Troubleshooting
+    -   Need More Help?
+
+    
+8.  Logout -> Ends user session
+
+

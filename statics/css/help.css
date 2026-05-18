@@ -1,0 +1,124 @@
+/* ================= GLOBAL STYLE ================= */
+
+/* Base page styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+
+    /* Background gradient */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+    /* Default text color */
+    color: white;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+/* Wrapper for Help page */
+.help-container {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px;
+}
+
+/* Page heading */
+.help-container h1 {
+    color: #00ffc8;
+    margin-bottom: 20px;
+}
+
+
+/* ================= HELP CARDS ================= */
+
+/* Card layout (glass effect) */
+.help-card {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+
+    /* Glassmorphism blur */
+    backdrop-filter: blur(6px);
+}
+
+/* Card headings */
+.help-card h2 {
+    color: #00ffc8;
+    margin-bottom: 10px;
+}
+
+/* List container */
+.help-card ul {
+    padding-left: 20px;
+}
+
+/* List items */
+.help-card ul li {
+    margin-bottom: 6px;
+}
+
+
+/* ================= BUTTON ================= */
+
+/* Contact support button */
+.contact-btn {
+    display: inline-block;
+    margin-top: 10px;
+
+    background: #00ffc8;
+    color: black;
+
+    padding: 10px 15px;
+    border-radius: 8px;
+
+    text-decoration: none;
+}
+
+/* Hover effect */
+.contact-btn:hover {
+    background: #00cfa8;
+}
+
+
+/* ================= BACK BUTTON ================= */
+
+/* Back to dashboard link */
+.back-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    color: #00ffc8;
+    text-decoration: none;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.faq-answer {
+    display: none;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.help-card {
+    transition: 0.3s;
+}
+
+.help-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.4),
+        0 0 10px rgba(0,255,200,0.15);
+}
+
+.help-card p {
+    line-height: 1.6;
+}
+
+.help-card ul li {
+    margin-bottom: 8px;
+}

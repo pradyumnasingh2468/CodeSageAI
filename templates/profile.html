@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta configuration -->
+    <meta charset="UTF-8">
+
+    <!-- Page Title -->
+    <title>Profile | CodeSageAI</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+</head>
+
+<body>
+
+<div class="profile-container">
+
+    <!-- ================= BACK BUTTON ================= -->
+    <a href="{% url 'dashboard' %}">
+        <button class="back-btn">
+            ⬅ Back to Dashboard
+        </button>
+    </a>
+
+
+    <!-- ================= PROFILE CARD ================= -->
+    <div class="profile-card">
+
+        <div class="avatar-wrapper">
+
+            <!-- Profile Image (click to upload new image) -->
+            <img 
+                src="{{ request.user.profile.image.url }}"
+                class="avatar"
+                id="profilePreview"
+                onclick="openFile()">
+
+            <!-- Upload Form -->
+            <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                {% csrf_token %}
+
+                <!-- Hidden file input -->
+                <input 
+                    type="file" 
+                    name="image" 
+                    id="fileInput" 
+                    hidden>
+
+                <!-- Remove profile photo -->
+                <button 
+                    type="submit" 
+                    name="remove_photo" 
+                    class="remove-photo">
+                    Remove Photo
+                </button>
+            </form>
+
+        </div>
+
+        <!-- User Info -->
+        <h2>{{ request.user.username }}</h2>
+        <p>{{ request.user.first_name }} {{ request.user.last_name }}</p>
+        <p class="email">{{ request.user.email }}</p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+    // Flag to prevent multiple submissions
+    let uploaded = false;
+
+    // Trigger file input when profile image is clicked
+    function openFile(){
+        document.getElementById("fileInput").click();
+    }
+
+    // Auto-submit form when a file is selected
+    document.getElementById("fileInput").addEventListener("change", function(){
+        if(!uploaded){
+            uploaded = true;
+            document.getElementById("uploadForm").submit();
+        }
+    });
+
+</script>
+
+</body>
+</html>
